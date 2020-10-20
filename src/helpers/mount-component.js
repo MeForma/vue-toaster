@@ -7,7 +7,7 @@ const mount = (component, { props, children, element, app } = {}) => {
   let el = element ? element : createElement()
 
   let vNode = h(component, props, children)
-  if (app?._context) {
+  if (app && app._context) {
     vNode.appContext = app._context
   }
 
