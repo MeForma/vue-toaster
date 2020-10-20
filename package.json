@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/MeForma/vue-toaster/issues"
   },
-  "homepage": "https://github.com/MeForma/vue-toaster#readme"
+  "homepage": "https://github.com/MeForma/vue-toaster#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
