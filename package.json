@@ -2,7 +2,7 @@
   "name": "@meforma/vue-toaster",
   "version": "1.0.1",
   "description": "Vue.js toaster notification",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,8 +25,5 @@
   "bugs": {
     "url": "https://github.com/MeForma/vue-toaster/issues"
   },
-  "homepage": "https://github.com/MeForma/vue-toaster#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  }
+  "homepage": "https://github.com/MeForma/vue-toaster#readme"
 }
