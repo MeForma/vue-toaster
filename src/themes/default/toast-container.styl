@@ -1,0 +1,20 @@
+.c-toast-container
+  position fixed
+  display flex
+  top 0
+  bottom 0
+  left 0
+  right 0
+  padding 2em
+  overflow hidden
+  z-index 9999
+  pointer-events none
+
+  &--top
+    flex-direction column
+  &--bottom
+    flex-direction column-reverse
+
+  @media screen and (max-width 768px)
+    padding 0
+    position fixed !important

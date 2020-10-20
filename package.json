@@ -1,0 +1,29 @@
+{
+  "name": "@meforma/vue-toaster",
+  "version": "1.0.0",
+  "description": "Vue.js toaster notification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeForma/vue-toaster.git"
+  },
+  "keywords": [
+    "toast",
+    "toaster",
+    "notification",
+    "vue",
+    "vue",
+    "3",
+    "toastify",
+    "toaster"
+  ],
+  "author": "@jprodrigues70",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MeForma/vue-toaster/issues"
+  },
+  "homepage": "https://github.com/MeForma/vue-toaster#readme"
+}
