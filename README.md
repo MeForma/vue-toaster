@@ -42,7 +42,7 @@ The API methods accepts these options:
 |  message      | String   | --             |  Message text/html (required)   |
 |  type         | String   | `default`      |  One of `success`, `info`, `warning`, `error`, `default`  |
 |  position     | String   | `bottom-right` |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
-| duration      | Number   | `4000`         |  Visibility duration in milliseconds    |
+| duration      | Number or false   | `4000`         |  Visibility duration in milliseconds or `false` that disables duration    |
 | dismissible   | Boolean  | `true`         |  Allow user close by clicking    |
 | onClick       | Function | --             |  Do something when user clicks    |
 | onClose       | Function | --             |  Do something after toast gets dismissed    |
