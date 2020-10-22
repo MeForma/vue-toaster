@@ -40,7 +40,7 @@ export default {
       }
     },
     duration: {
-      type: Number,
+      type: [Number, Boolean],
       default: 4000
     },
     dismissible: {
@@ -73,7 +73,8 @@ export default {
       isActive: false,
       parentTop: null,
       parentBottom: null,
-      isHovered: false
+      isHovered: false,
+      timer: null
     }
   },
   beforeMount() {
@@ -129,7 +130,7 @@ export default {
       this.correctParent.insertAdjacentElement('afterbegin', this.$el)
       this.isActive = true
 
-      this.timer = new Timer(this.close, this.duration)
+      this.timer = this.duration !== false ? new Timer(this.close, this.duration) : null
     },
     click() {
       if (this.dismissible) {
@@ -138,12 +139,12 @@ export default {
       }
     },
     toggleTimer(newVal) {
-      if (this.pauseOnHover) {
+      if (this.timer && this.pauseOnHover) {
         newVal ? this.timer.pause() : this.timer.resume()
       }
     },
     stopTimer() {
-      this.timer.stop()
+      this.timer && this.timer.stop()
       clearTimeout(this.queueTimer)
     },
     close() {
