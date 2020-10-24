@@ -23,11 +23,11 @@ createApp(App).use(Toaster).mount('#app')
 ## Usage
 ```js
 // this.$toast.show(message, {/* options */});
-this.$toast.show('You did it!');
-this.$toast.success('You did it!');
-this.$toast.error('You did it!');
-this.$toast.warning('You did it!');
-this.$toast.info('You did it!');
+this.$toast.show(`Hey! I'm here`);
+this.$toast.success(`Hey! I'm here`);
+this.$toast.error(`Hey! I'm here`);
+this.$toast.warning(`Hey! I'm here`);
+this.$toast.info(`Hey! I'm here`);
 
 // Close all opened toast after 3000ms
 setTimeout(this.$toast.clear, 3000)
@@ -88,6 +88,14 @@ this.$toast.success('Order placed.', {
   // override the global option
   position: 'bottom'
 })
+```
+
+## How to execute example
+
+Clone the project and run:
+
+```
+cd example; yarn install; yarn serve
 ```
 
 ## Based on
