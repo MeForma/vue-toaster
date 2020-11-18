@@ -13,6 +13,16 @@ yarn add @meforma/vue-toaster
 npm install @meforma/vue-toaster
 ```
 
+stylus-loader is also required
+
+```bash
+# yarn
+yarn add stylus-loader@3 stylus
+
+# npm
+npm install stylus-loader@3 stylus
+```
+
 ## Import
 ```js
 // In you main.js
