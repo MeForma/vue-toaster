@@ -130,11 +130,13 @@ export default {
       this.correctParent.insertAdjacentElement('afterbegin', this.$el)
       this.isActive = true
 
-      this.timer = this.duration !== false ? new Timer(this.close, this.duration) : null
+      this.timer =
+        this.duration !== false ? new Timer(this.close, this.duration) : null
     },
     click() {
+      this.onClick.apply(null, arguments)
+
       if (this.dismissible) {
-        this.onClick.apply(null, arguments)
         this.close()
       }
     },

@@ -1,6 +1,6 @@
 {
   "name": "@meforma/vue-toaster",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Vue.js toaster notification",
   "main": "src/index.js",
   "scripts": {
@@ -15,15 +15,17 @@
     "toaster",
     "notification",
     "vue",
-    "vue",
-    "3",
-    "toastify",
-    "toaster"
+    "vue3",
+    "toastify"
   ],
   "author": "@jprodrigues70",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MeForma/vue-toaster/issues"
   },
-  "homepage": "https://github.com/MeForma/vue-toaster#readme"
+  "homepage": "https://github.com/MeForma/vue-toaster#readme",
+  "dependencies": {
+    "stylus": "~0.54.8",
+    "stylus-loader": "~3.0.2"
+  }
 }

@@ -5,6 +5,7 @@ Vue.js toast notification plugin for vue 3
 [DEMO](https://meforma.github.io/vue-toaster/)
 
 ## Installation
+
 ```bash
 # yarn
 yarn add @meforma/vue-toaster
@@ -13,26 +14,18 @@ yarn add @meforma/vue-toaster
 npm install @meforma/vue-toaster
 ```
 
-stylus-loader is also required
-
-```bash
-# yarn
-yarn add stylus-loader@3 stylus
-
-# npm
-npm install stylus-loader@3 stylus
-```
-
 ## Import
+
 ```js
 // In you main.js
 // ... considering that your app creation is here
-import Toaster from '@meforma/vue-toaster';
+import Toaster from "@meforma/vue-toaster";
 
-createApp(App).use(Toaster).mount('#app')
+createApp(App).use(Toaster).mount("#app");
 ```
 
 ## Usage
+
 ```js
 // this.$toast.show(message, {/* options */});
 this.$toast.show(`Hey! I'm here`);
@@ -42,64 +35,72 @@ this.$toast.warning(`Hey! I'm here`);
 this.$toast.info(`Hey! I'm here`);
 
 // Close all opened toast after 3000ms
-setTimeout(this.$toast.clear, 3000)
-
+setTimeout(this.$toast.clear, 3000);
 ```
 
 ## Available options
+
 The API methods accepts these options:
 
-| Attribute     | Type     | Default        | Description      |
-| :---          | :---:    | :---:          | :---             |
-|  message      | String   | --             |  Message text/html (required)   |
-|  type         | String   | `default`      |  One of `success`, `info`, `warning`, `error`, `default`  |
-|  position     | String   | `bottom-right` |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
-| duration      | Number or false   | `4000`         |  Visibility duration in milliseconds or `false` that disables duration    |
-| dismissible   | Boolean  | `true`         |  Allow user close by clicking    |
-| onClick       | Function | --             |  Do something when user clicks    |
-| onClose       | Function | --             |  Do something after toast gets dismissed    |
-| queue         | Boolean | `false`         |  Wait for existing to close before showing new     |
-| pauseOnHover  | Boolean | `true`          |  Pause the timer when mouse on over a toast    |
-| useDefaultCss | Boolean | `true`          |  User default css styles   |
+| Attribute     |      Type       |    Default     | Description                                                                   |
+| :------------ | :-------------: | :------------: | :---------------------------------------------------------------------------- |
+| message       |     String      |       --       | Message text/html (required)                                                  |
+| type          |     String      |   `default`    | One of `success`, `info`, `warning`, `error`, `default`                       |
+| position      |     String      | `bottom-right` | One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left` |
+| duration      | Number or false |     `4000`     | Visibility duration in milliseconds or `false` that disables duration         |
+| dismissible   |     Boolean     |     `true`     | Allow user close by clicking                                                  |
+| onClick       |    Function     |       --       | Do something when user clicks                                                 |
+| onClose       |    Function     |       --       | Do something after toast gets dismissed                                       |
+| queue         |     Boolean     |    `false`     | Wait for existing to close before showing new                                 |
+| pauseOnHover  |     Boolean     |     `true`     | Pause the timer when mouse on over a toast                                    |
+| useDefaultCss |     Boolean     |     `true`     | User default css styles                                                       |
 
 ## API methods
+
 ### `show(message, ?options)`
+
 This is generic method, you can use this method to make any kind of toast.
+
 ```js
 // Can accept a message as string and apply rest of options from defaults
-this.$toast.show('Howdy!');
+this.$toast.show("Howdy!");
 
 // Can accept an Object of options.
 // If yout don't pass options, the default toast will be showed
-this.$toast.show('Something went wrong!', {
-    type: 'error',
-    // all of other options may go here
+this.$toast.show("Something went wrong!", {
+  type: "error",
+  // all of other options may go here
 });
 ```
 
 ### `success(message,?options)`
+
 There are some proxy methods to make it more readable. The same rule for `error`, `info` and `warning` methods
+
 ```js
-this.$toast.success('Profile saved.', {
+this.$toast.success("Profile saved.", {
   // optional options Object
-})
+});
 ```
 
 ## Global options
+
 You can set options for all the instances during plugin initialization
+
 ```js
 app.use(Toaster, {
   // One of the options
-  position: 'top'
-})
+  position: "top",
+});
 ```
 
 Further you can override option when creating new instances
+
 ```js
-this.$toast.success('Order placed.', {
+this.$toast.success("Order placed.", {
   // override the global option
-  position: 'bottom'
-})
+  position: "bottom",
+});
 ```
 
 ## How to execute example
@@ -111,7 +112,9 @@ cd example; yarn install; yarn serve
 ```
 
 ## Based on
-* [vue-toast-notification](https://github.com/ankurk91/vue-toast-notification) plugin
+
+- [vue-toast-notification](https://github.com/ankurk91/vue-toast-notification) plugin
 
 ## License
+
 [MIT](LICENSE.txt) License
