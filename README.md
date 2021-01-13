@@ -111,10 +111,6 @@ Clone the project and run:
 cd example; yarn install; yarn serve
 ```
 
-## Based on
-
-- [vue-toast-notification](https://github.com/ankurk91/vue-toast-notification) plugin
-
 ## License
 
 [MIT](LICENSE.txt) License
