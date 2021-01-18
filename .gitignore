@@ -57,3 +57,5 @@ composer.phar
 /docs/
 /tmp/
 /coverage/
+
+.prettierrc

@@ -39,6 +39,10 @@ export default {
         return Object.values(Positions).includes(value)
       }
     },
+    maxToasts: {
+      type: [Number, Boolean],
+      default: false
+    },
     duration: {
       type: [Number, Boolean],
       default: 4000
@@ -114,7 +118,16 @@ export default {
       container.appendChild(this.parentBottom)
     },
     shouldQueue() {
-      if (!this.queue) return false
+      if (!this.queue && this.maxToasts === false) {
+        return false
+      }
+
+      if (this.maxToasts !== false) {
+        return (
+          this.maxToasts <=
+          this.parentTop.childElementCount + this.parentBottom.childElementCount
+        )
+      }
 
       return (
         this.parentTop.childElementCount > 0 ||

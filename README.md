@@ -52,6 +52,7 @@ The API methods accepts these options:
 | onClick       |    Function     |       --       | Do something when user clicks                                                 |
 | onClose       |    Function     |       --       | Do something after toast gets dismissed                                       |
 | queue         |     Boolean     |    `false`     | Wait for existing to close before showing new                                 |
+| maxToasts     | Number or false |    `false`     | Defines the max of toasts showed in simultaneous                              |
 | pauseOnHover  |     Boolean     |     `true`     | Pause the timer when mouse on over a toast                                    |
 | useDefaultCss |     Boolean     |     `true`     | User default css styles                                                       |
 
