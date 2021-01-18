@@ -17,8 +17,8 @@
         <div class="c-two-columns">
           <div>
             <fieldset>
-              <label class="c-label" for="">Message</label>
-              <input v-model="message" type="text" />
+              <label class="c-label" for="message">Message</label>
+              <input id="message" v-model="message" type="text" />
             </fieldset>
             <fieldset>
               <label class="c-label">Position</label>
@@ -71,6 +71,14 @@
                 />
                 Enqueue
               </label>
+            </fieldset>
+            <fieldset>
+              <label class="c-label"> Max Toasts</label>
+              <input
+                type="number"
+                v-model="options.maxToasts"
+                placeholder="false"
+              />
             </fieldset>
             <fieldset>
               <label class="c-label">
@@ -129,9 +137,17 @@
                     }}</code>
                   </span>
 
-                  <span cla ss="c-code--object-line" v-if="options.queue">
+                  <span class="c-code--object-line" v-if="options.queue">
                     <code>queue:</code>
                     <code class="c-code--number">{{ options.queue }}</code>
+                  </span>
+
+                  <span
+                    class="c-code--object-line"
+                    v-if="options.maxToasts !== false"
+                  >
+                    <code>max:</code>
+                    <code class="c-code--number">{{ options.maxToasts }}</code>
                   </span>
 
                   <span
@@ -206,14 +222,24 @@ export default {
     }
   },
   methods: {
-    toast(type = 'default') {
-      const options = {}
+    toast(type = 'default', dismissible = true) {
+      const options = {
+        dismissible,
+        onClick: this.onClick
+      }
       typeof type === 'string' && (options.type = type)
-
-      this.$toast.show(this.message, { ...options, ...this.options })
+      typeof this.options.maxToasts === 'string' &&
+        (this.options.maxToasts = parseInt(this.options.maxToasts))
+      this.$toast.show(this.message, {
+        ...options,
+        ...this.options
+      })
     },
     changeDuration(e) {
       this.options.duration = !e.target.checked ? 4000 : false
+    },
+    onClick(e) {
+      console.log(e)
     }
   }
 }
