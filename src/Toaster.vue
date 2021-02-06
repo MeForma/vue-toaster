@@ -83,15 +83,11 @@ export default {
   },
   beforeMount() {
     this.createParents()
+    this.setDefaultCss()
     this.setupContainer()
   },
   mounted() {
     this.showNotice()
-
-    if (this.useDefaultCss) {
-      require('./themes/default/index.styl')
-    }
-
     eventBus.$on('toast-clear', this.close)
   },
   methods: {
@@ -111,6 +107,11 @@ export default {
         this.parentBottom.className =
           'c-toast-container c-toast-container--bottom'
       }
+    },
+    setDefaultCss() {
+      const type = this.useDefaultCss ? 'add' : 'remove'
+      this.parentTop.classList[type]('v--default-css')
+      this.parentBottom.classList[type]('v--default-css')
     },
     setupContainer() {
       const container = document.body
@@ -194,3 +195,9 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+@import './themes/default/index.styl'
+.v--default-css
+  @import './colors'
+  @import './toast'
+</style>

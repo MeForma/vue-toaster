@@ -144,7 +144,7 @@
 
                   <span
                     class="c-code--object-line"
-                    v-if="options.maxToasts !== false"
+                    v-if="options.maxToasts || options.maxToasts === 0"
                   >
                     <code>max:</code>
                     <code class="c-code--number">{{ options.maxToasts }}</code>
@@ -228,8 +228,10 @@ export default {
         onClick: this.onClick
       }
       typeof type === 'string' && (options.type = type)
+
       typeof this.options.maxToasts === 'string' &&
         (this.options.maxToasts = parseInt(this.options.maxToasts))
+
       this.$toast.show(this.message, {
         ...options,
         ...this.options
