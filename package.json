@@ -1,6 +1,6 @@
 {
   "name": "@meforma/vue-toaster",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vue.js toaster notification",
   "main": "src/index.js",
   "scripts": {
