@@ -198,6 +198,6 @@ export default {
 <style lang="stylus">
 @import './themes/default/index.styl'
 .v--default-css
-  @import './colors'
-  @import './toast'
+  @import './themes/default/colors.styl'
+  @import './themes/default/toast.styl'
 </style>
