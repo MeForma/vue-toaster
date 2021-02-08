@@ -877,10 +877,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@meforma/vue-toaster@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@meforma/vue-toaster/-/vue-toaster-1.2.1.tgz#867fa92c0bc270178c138df660d63aa41f719b06"
-  integrity sha512-wSLnybrnR0q2fv3PabUR1EOMXZepb9lb81NTbfbZJPq2i6pkW/Nq6Hli8eCqEV5hUq8R/XoOlVt2Q5ErJw4EqQ==
+"@meforma/vue-toaster@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@meforma/vue-toaster/-/vue-toaster-1.2.2.tgz#7d0ee9504a68f856c29bc6f53b8dbb7b5bfbea55"
+  integrity sha512-J/UKmqi2BLgiYrex4OclWvID5QDZO2IHGn9ZJZF+HjnLG1TgR4VvWnHGTeyr2/EUQfFc64qC78Jd66TAp9zvzg==
   dependencies:
     stylus "~0.54.8"
     stylus-loader "~3.0.2"
