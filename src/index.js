@@ -1,9 +1,9 @@
 import Toaster from './Toaster.vue'
-import Api from './api.js'
+import createToaster from './api.js'
 import Positions from './defaults/positions.js'
 
 const Plugin = (app, options = {}) => {
-  let methods = Api(options)
+  let methods = createToaster(options)
   app.$toast = methods
   app.config.globalProperties.$toast = methods
 }
@@ -11,4 +11,4 @@ const Plugin = (app, options = {}) => {
 Toaster.install = Plugin
 
 export default Toaster
-export { Toaster, Positions }
+export { Toaster, Positions, createToaster }

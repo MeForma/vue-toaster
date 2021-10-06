@@ -16,12 +16,24 @@ npm install @meforma/vue-toaster
 
 ## Import
 
+You can install Toaster so it's usable globally:
+
 ```js
 // In you main.js
 // ... considering that your app creation is here
 import Toaster from "@meforma/vue-toaster";
 
 createApp(App).use(Toaster).mount("#app");
+```
+
+You can also import Toaster locally:
+
+```js
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({ /* options */ });
+
+toaster.show(`Hey! I'm here`);
 ```
 
 ## Usage
