@@ -1,16 +1,16 @@
 // Animations are taken from animate.css
 // https://daneden.github.io/animate.css
 
-@keyframes fadeOut
+@keyframes vue-toaster-fade-out
   from
     opacity 1
   to
     opacity 0
 
-.fadeOut
-  animation-name fadeOut
+.vue-toaster-fade-out
+  animation-name vue-toaster-fade-out
 
-@keyframes fadeInDown
+@keyframes vue-toaster-fade-in-down
   from
     opacity .5
     transform translate3d(0, -100%, 0)
@@ -18,10 +18,10 @@
     opacity 1
     transform none
 
-.fadeInDown
-  animation-name fadeInDown
+.vue-toaster-fade-in-down
+  animation-name vue-toaster-fade-in-down
 
-@keyframes fadeInUp
+@keyframes vue-toaster-fade-in-up
   from
     opacity .5
     transform translate3d(0, 100%, 0)
@@ -29,16 +29,16 @@
     opacity 1
     transform none
 
-.fadeInUp
-  animation-name fadeInUp
+.vue-toaster-fade-in-up
+  animation-name vue-toaster-fade-in-up
 
 // VUE
 
-.fade-enter-active
+.vue-toaster-fade-enter-active
   transition opacity 300ms ease-in
-.fade-leave-active
+.vue-toaster-fade-leave-active
   transition opacity 150ms ease-out
 
-.fade-enter,
-.fade-leave-to
+.vue-toaster-fade-enter,
+.vue-toaster-fade-leave-to
   opacity 0
