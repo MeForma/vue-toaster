@@ -3,6 +3,11 @@
   "version": "1.3.0",
   "description": "Vue.js toaster notification",
   "main": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
