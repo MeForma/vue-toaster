@@ -192,6 +192,9 @@ export default {
       )
     },
     messageComponent() {
+      if (typeof this.message === 'function') {
+        return h('div', this.message())
+      }
       return h('div', this.message)
     }
   },

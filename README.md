@@ -36,6 +36,7 @@ const toaster = createToaster({ /* options */ });
 toaster.show(`Hey! I'm here`);
 ```
 
+
 ## Usage
 
 ```js
@@ -48,10 +49,26 @@ this.$toast.info(`Hey! I'm here`);
 
 // Close all opened toast after 3000ms
 setTimeout(this.$toast.clear, 3000);
+```
+
+### Usage with tailwindcss and render function
+
+```js
+import { h } from 'vue'
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({ 
+  useDefaultCss: false,
+});
 
 // use render function
 // see: https://vuejs.org/api/render-function.html#h
-this.$toast.show(() => h('span', `Hey! I'm here`));
+toaster.show(() =>
+  h('div', { class: 'flex bg-white rounded text-md gap-4 p-6' }, [
+    h('strong', { class: 'text-semibold' }, `Toast title`),
+    h('span', `Toast message`),
+  ])
+);
 ```
 
 ## Available options
