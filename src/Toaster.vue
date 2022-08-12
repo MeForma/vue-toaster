@@ -10,12 +10,14 @@
       @mouseleave="toggleTimer(false)"
       @click="click"
       role="alert"
-      v-html="message"
-    />
+    >
+      <component :is="messageComponent" />
+    </div>
   </transition>
 </template>
 
 <script>
+import { h } from 'vue'
 import { removeElement } from './helpers/remove-element'
 import Timer from './helpers/timer'
 import Positions, { definePosition } from './defaults/positions'
@@ -25,7 +27,7 @@ export default {
   name: 'toast',
   props: {
     message: {
-      type: String,
+      type: [String, Number, Object, Function],
       required: true
     },
     type: {
@@ -188,6 +190,9 @@ export default {
           leave: 'fadeOut'
         }
       )
+    },
+    messageComponent() {
+      return h('div', this.message)
     }
   },
   beforeUnmount() {
