@@ -1,7 +1,6 @@
 <template>
   <transition
-    :enter-active-class="transition.enter"
-    :leave-active-class="transition.leave"
+    v-bind="transitionBinding"
   >
     <div
       v-show="isActive"
@@ -40,6 +39,9 @@ export default {
       validator(value) {
         return Object.values(Positions).includes(value)
       }
+    },
+    transition: {
+      type: Object,
     },
     maxToasts: {
       type: [Number, Boolean],
@@ -178,16 +180,20 @@ export default {
     correctParent() {
       return definePosition(this.position, this.parentTop, this.parentBottom)
     },
-    transition() {
+    transitionBinding() {
+      if (this.transition !== undefined) {
+        return this.transition
+      }
+
       return definePosition(
         this.position,
         {
-          enter: 'fadeInDown',
-          leave: 'fadeOut'
+          'enter-active-class': 'fadeInDown',
+          'leave-active-class': 'fadeOut'
         },
         {
-          enter: 'fadeInUp',
-          leave: 'fadeOut'
+          'enter-active-class': 'fadeInUp',
+          'leave-active-class': 'fadeOut'
         }
       )
     },
