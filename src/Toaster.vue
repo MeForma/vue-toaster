@@ -5,8 +5,14 @@
     <div
       v-show="isActive"
       :class="['c-toast', `c-toast--${type}`, `c-toast--${position}`]"
-      @mouseover="toggleTimer(true)"
-      @mouseleave="toggleTimer(false)"
+      @mouseover="() => {
+        isHovered = true
+        toggleTimer(true)
+      }"
+      @mouseleave="() => {
+        isHovered = false
+        toggleTimer(false)
+      }"
       @click="click"
       role="alert"
     >
@@ -16,7 +22,7 @@
 </template>
 
 <script>
-import { h } from 'vue'
+import { computed, h } from 'vue'
 import { removeElement } from './helpers/remove-element'
 import Timer from './helpers/timer'
 import Positions, { definePosition } from './defaults/positions'
@@ -83,6 +89,18 @@ export default {
       parentBottom: null,
       isHovered: false,
       timer: null
+    }
+  },
+  provide() {
+    return {
+      toast: computed(() => ({
+        isActive: this.isActive,
+        isHovered: this.isHovered,
+        timer: this.timer,
+        duration: this.duration,
+        click: this.click,
+        close: this.close,
+      }))
     }
   },
   beforeMount() {
