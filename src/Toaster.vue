@@ -188,12 +188,12 @@ export default {
       return definePosition(
         this.position,
         {
-          'enter-active-class': 'fadeInDown',
-          'leave-active-class': 'fadeOut'
+          enterActiveClass: 'fadeInDown',
+          leaveActiveClass: 'fadeOut'
         },
         {
-          'enter-active-class': 'fadeInUp',
-          'leave-active-class': 'fadeOut'
+          enterActiveClass: 'fadeInUp',
+          leaveActiveClass: 'fadeOut'
         }
       )
     },
