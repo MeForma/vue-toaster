@@ -2,11 +2,12 @@ import Toaster from './Toaster.vue'
 import eventBus from './helpers/event-bus.js'
 import mount from './helpers/mount-component'
 
-const Api = (globalOptions = {}) => {
+const Api = (globalOptions = {}, mountOptions = {}) => {
   return {
     show(message, options = {}) {
       let localOptions = { message, ...options }
       const c = mount(Toaster, {
+        ...mountOptions,
         props: { ...globalOptions, ...localOptions }
       })
       return c
