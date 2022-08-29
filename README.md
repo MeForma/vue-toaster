@@ -59,6 +59,14 @@ import { createToaster } from "@meforma/vue-toaster";
 
 const toaster = createToaster({ 
   useDefaultCss: false,
+  transition: {
+    enterActiveClass: "transition duration-100 ease-out"
+    enterFromClass: "transform scale-95 opacity-0"
+    enterToClass: "transform scale-100 opacity-100"
+    leaveActiveClass: "transition duration-75 ease-out"
+    leaveFromClass: "transform scale-100 opacity-100"
+    leaveToClass: "transform scale-95 opacity-0"
+  }
 });
 
 // use render function
@@ -88,6 +96,7 @@ The API methods accepts these options:
 | maxToasts     | Number or false |    `false`     | Defines the max of toasts showed in simultaneous                              |
 | pauseOnHover  |     Boolean     |     `true`     | Pause the timer when mouse on over a toast                                    |
 | useDefaultCss |     Boolean     |     `true`     | User default css styles                                                       |
+| transition    |     Object      |       --       | Custom toast transition ([see all props](https://vuejs.org/api/built-in-components.html#transition))                                                     |
 
 ## API methods
 
