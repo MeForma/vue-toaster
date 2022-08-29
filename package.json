@@ -32,5 +32,8 @@
   "dependencies": {
     "stylus": "~0.54.8",
     "stylus-loader": "~3.0.2"
+  },
+  "devDependencies": {
+    "vue": "^3.2.37"
   }
 }

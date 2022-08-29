@@ -22,13 +22,12 @@
 </template>
 
 <script>
-import { computed, h } from 'vue'
+import { computed, h, defineComponent } from 'vue'
 import { removeElement } from './helpers/remove-element'
 import Timer from './helpers/timer'
 import Positions, { definePosition } from './defaults/positions'
-import eventBus from './helpers/event-bus'
 
-export default {
+export default defineComponent({
   name: 'toast',
   props: {
     message: {
@@ -47,6 +46,9 @@ export default {
       }
     },
     transition: {
+      type: Object,
+    },
+    eventBus: {
       type: Object,
     },
     maxToasts: {
@@ -110,7 +112,7 @@ export default {
   },
   mounted() {
     this.showNotice()
-    eventBus.$on('toast-clear', this.close)
+    this.eventBus.$on('toast-clear', this.close)
   },
   methods: {
     createParents() {
@@ -190,6 +192,7 @@ export default {
       this.isActive = false
       setTimeout(() => {
         this.onClose.apply(null, arguments)
+        this.eventBus.$off('toast-clear', this.close)
         removeElement(this.$el)
       }, 150)
     }
@@ -223,9 +226,9 @@ export default {
     }
   },
   beforeUnmount() {
-    eventBus.$off('toast-clear', this.close)
+    this.eventBus.$off('toast-clear', this.close)
   }
-}
+})
 </script>
 <style lang="stylus">
 @import './themes/default/index.styl'

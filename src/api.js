@@ -1,5 +1,5 @@
 import Toaster from './Toaster.vue'
-import eventBus from './helpers/event-bus.js'
+import { eventBus } from './helpers/event-bus.js'
 import mount from './helpers/mount-component'
 
 const Api = (globalOptions = {}, mountOptions = {}) => {
@@ -8,7 +8,7 @@ const Api = (globalOptions = {}, mountOptions = {}) => {
       let localOptions = { message, ...options }
       const c = mount(Toaster, {
         ...mountOptions,
-        props: { ...globalOptions, ...localOptions }
+        props: { ...globalOptions, ...localOptions, eventBus }
       })
       return c
     },
