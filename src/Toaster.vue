@@ -5,7 +5,7 @@
   >
     <div
       v-show="isActive"
-      :class="['c-toast', `c-toast--${type}`, `c-toast--${position}`]"
+      :class="['vue-toaster', `vue-toaster--${type}`, `vue-toaster--${position}`]"
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
       @click="click"
@@ -92,20 +92,20 @@ export default {
   },
   methods: {
     createParents() {
-      this.parentTop = document.querySelector('.c-toast-container--top')
-      this.parentBottom = document.querySelector('.c-toast-container--bottom')
+      this.parentTop = document.querySelector('.vue-toaster-container--top')
+      this.parentBottom = document.querySelector('.vue-toaster-container--bottom')
 
       if (this.parentTop && this.parentBottom) return
 
       if (!this.parentTop) {
         this.parentTop = document.createElement('div')
-        this.parentTop.className = 'c-toast-container c-toast-container--top'
+        this.parentTop.className = 'vue-toaster-container vue-toaster-container--top'
       }
 
       if (!this.parentBottom) {
         this.parentBottom = document.createElement('div')
         this.parentBottom.className =
-          'c-toast-container c-toast-container--bottom'
+          'vue-toaster-container vue-toaster-container--bottom'
       }
     },
     setDefaultCss() {
@@ -180,12 +180,12 @@ export default {
       return definePosition(
         this.position,
         {
-          enter: 'fadeInDown',
-          leave: 'fadeOut'
+          enter: 'vue-toaster-fade-in-down',
+          leave: 'vue-toaster-fade-out'
         },
         {
-          enter: 'fadeInUp',
-          leave: 'fadeOut'
+          enter: 'vue-toaster-fade-in-up',
+          leave: 'vue-toaster-fade-out'
         }
       )
     }
@@ -195,6 +195,7 @@ export default {
   }
 }
 </script>
+
 <style lang="stylus">
 @import './themes/default/index.styl'
 .v--default-css
