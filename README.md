@@ -54,19 +54,19 @@ setTimeout(this.$toast.clear, 3000);
 
 The API methods accepts these options:
 
-| Attribute     |      Type       |    Default     | Description                                                                   |
-| :------------ | :-------------: | :------------: | :---------------------------------------------------------------------------- |
-| message       |     String      |       --       | Message text/html (required)                                                  |
-| type          |     String      |   `default`    | One of `success`, `info`, `warning`, `error`, `default`                       |
-| position      |     String      | `bottom-right` | One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left` |
-| duration      | Number or false |     `4000`     | Visibility duration in milliseconds or `false` that disables duration         |
-| dismissible   |     Boolean     |     `true`     | Allow user close by clicking                                                  |
-| onClick       |    Function     |       --       | Do something when user clicks                                                 |
-| onClose       |    Function     |       --       | Do something after toast gets dismissed                                       |
-| queue         |     Boolean     |    `false`     | Wait for existing to close before showing new                                 |
-| maxToasts     | Number or false |    `false`     | Defines the max of toasts showed in simultaneous                              |
-| pauseOnHover  |     Boolean     |     `true`     | Pause the timer when mouse on over a toast                                    |
-| useDefaultCss |     Boolean     |     `true`     | User default css styles                                                       |
+| Attribute     |      Type       |    Default     | Description                                                                             |
+| :------------ | :-------------: | :------------: | :---------------------------------------------------------------------------------------|
+| message       |     String      |       --       | Message text/html (required)                                                            |
+| type          |     String      |   `default`    | One of `success`, `info`, `warning`, `error`, `default`                                 |
+| position      |     String      | `bottom-right` | One of `top`, `bottom`, `center`, `top-right`, `bottom-right`,`top-left`, `bottom-left` |
+| duration      | Number or false |     `4000`     | Visibility duration in milliseconds or `false` that disables duration                   |
+| dismissible   |     Boolean     |     `true`     | Allow user close by clicking                                                            |
+| onClick       |    Function     |       --       | Do something when user clicks                                                           |
+| onClose       |    Function     |       --       | Do something after toast gets dismissed                                                 |
+| queue         |     Boolean     |    `false`     | Wait for existing to close before showing new                                           |
+| maxToasts     | Number or false |    `false`     | Defines the max of toasts showed in simultaneous                                        |
+| pauseOnHover  |     Boolean     |     `true`     | Pause the timer when mouse on over a toast                                              |
+| useDefaultCss |     Boolean     |     `true`     | User default css styles                                                                 |
 
 ## API methods
 

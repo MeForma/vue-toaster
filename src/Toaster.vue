@@ -77,6 +77,7 @@ export default {
       isActive: false,
       parentTop: null,
       parentBottom: null,
+      parentCenter: null,
       isHovered: false,
       timer: null
     }
@@ -94,8 +95,9 @@ export default {
     createParents() {
       this.parentTop = document.querySelector('.vue-toaster-container--top')
       this.parentBottom = document.querySelector('.vue-toaster-container--bottom')
+      this.parentCenter = document.querySelector('.vue-toaster-container--center')
 
-      if (this.parentTop && this.parentBottom) return
+      if (this.parentTop && this.parentBottom && this.parentCenter) return
 
       if (!this.parentTop) {
         this.parentTop = document.createElement('div')
@@ -107,16 +109,23 @@ export default {
         this.parentBottom.className =
           'vue-toaster-container vue-toaster-container--bottom'
       }
+
+      if (!this.parentCenter) {
+        this.parentCenter = document.createElement('div')
+        this.parentCenter.className = 'vue-toaster-container vue-toaster-container--center'
+      }
     },
     setDefaultCss() {
       const type = this.useDefaultCss ? 'add' : 'remove'
       this.parentTop.classList[type]('v--default-css')
       this.parentBottom.classList[type]('v--default-css')
+      this.parentCenter.classList[type]('v--default-css')
     },
     setupContainer() {
       const container = document.body
       container.appendChild(this.parentTop)
       container.appendChild(this.parentBottom)
+      container.appendChild(this.parentCenter)
     },
     shouldQueue() {
       if (!this.queue && this.maxToasts === false) {
@@ -126,13 +135,14 @@ export default {
       if (this.maxToasts !== false) {
         return (
           this.maxToasts <=
-          this.parentTop.childElementCount + this.parentBottom.childElementCount
+          this.parentTop.childElementCount + this.parentBottom.childElementCount + this.parentCenter.childElementCount
         )
       }
 
       return (
         this.parentTop.childElementCount > 0 ||
-        this.parentBottom.childElementCount > 0
+        this.parentBottom.childElementCount > 0 ||
+        this.parentCenter.childElementCount > 0
       )
     },
     showNotice() {
@@ -174,7 +184,7 @@ export default {
   },
   computed: {
     correctParent() {
-      return definePosition(this.position, this.parentTop, this.parentBottom)
+      return definePosition(this.position, this.parentTop, this.parentBottom, this.parentCenter)
     },
     transition() {
       return definePosition(
@@ -185,6 +195,10 @@ export default {
         },
         {
           enter: 'vue-toaster-fade-in-up',
+          leave: 'vue-toaster-fade-out'
+        },
+        {
+          enter: 'vue-toaster-fade-in-grow',
           leave: 'vue-toaster-fade-out'
         }
       )
