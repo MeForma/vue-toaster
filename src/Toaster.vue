@@ -112,8 +112,7 @@ export default {
 
       if (!this.parentCenter) {
         this.parentCenter = document.createElement('div')
-        this.parentCenter.className =
-          'vue-toaster-container vue-toaster-container--center'
+        this.parentCenter.className = 'vue-toaster-container vue-toaster-container--center'
       }
     },
     setDefaultCss() {
