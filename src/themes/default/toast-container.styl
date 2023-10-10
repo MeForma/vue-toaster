@@ -10,10 +10,12 @@
   z-index 9999
   pointer-events none
 
-  &--top
+  &--top, &--center
     flex-direction column
   &--bottom
     flex-direction column-reverse
+  &--center
+    justify-content center
 
   @media screen and (max-width 768px)
     padding 0
